@@ -1,6 +1,6 @@
 <x-front-layout>
 
-    <div class="container py-10 flex flex-col items-center gap-5">
+    <div class="container py-10 flex flex-col items-center gap-5" oncopy="copyDisable(event)" oncut="copyDisable(event)" onpaste="copyDisable(event)">
         <a href="{{route('home')}}" class="text-sm text-gray-600"> <- Home</a>
 
         @auth

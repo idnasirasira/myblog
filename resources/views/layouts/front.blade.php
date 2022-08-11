@@ -15,6 +15,11 @@
         @stack('styles')
     </head>
     <body class="font-reenie text-2xl antialiased scroll-smooth">
+        <div id="copyInformationBlock" class="fixed hidden bg-gray-100 w-screen h-screen flex-col items-center justify-center">
+            <h3 class="text-5xl font-bold tracking-wider text-gray-600">Please, don't copy anything from my website. Respect, ok?</h3>
+            <a href="#" onclick="hideInformationBlock(event)" class="font-bold underline text-5xl text-sky-600 hover:text-gray-600 transition-colors duration-500">OK</a>
+        </div>
+
         @if (Route::has('login'))
 
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -143,6 +148,20 @@
             function toggleFont(e){
                 document.body.classList.remove('font-reenie');
                 e.remove();
+            }
+
+            function copyDisable(event) {
+                event.preventDefault();
+                document.querySelector('#copyInformationBlock').classList.remove('hidden');
+                document.querySelector('#copyInformationBlock').classList.add('flex');
+                return false;
+            }
+
+            function hideInformationBlock(event){
+                event.preventDefault();
+                document.querySelector('#copyInformationBlock').classList.add('hidden');
+                document.querySelector('#copyInformationBlock').classList.remove('flex');
+                return false;
             }
         </script>
 
