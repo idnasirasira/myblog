@@ -12,7 +12,7 @@
         @endif
         @foreach ($posts as $post)
             <!-- Card -->
-            <div class="card bg-white border-stone-200 rounded-md p-5 w-full hover:drop-shadow-xl border border-gray-50 transition-all duration-300">
+            <div class="card bg-white border-stone-200 rounded-md p-5 w-full hover:drop-shadow-xl border transition-all duration-300">
                 <h3 class="text-3xl text-gray-600 cursor-pointer border-b border-gray-100 mb-2 pb-2 font-pacifico">
                     <a href="{{route('post.detail', ['post' => $post->id])}}" class="hover:text-sky-400 transition-colors duration-300 w-full">{{$post->title}}</a>
                 </h3>
