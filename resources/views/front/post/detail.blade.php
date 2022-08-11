@@ -3,18 +3,22 @@
     <div class="container py-10 flex flex-col items-center gap-5">
         <a href="{{route('home')}}" class="text-sm text-gray-600"> <- Home</a>
 
-        <div class="bg-white rounded-md p-5 w">
+        @auth
+            <a href="{{ route('post.detail', ['post' => $post->id]) }}" class="text-sky-600 text-sm hover:text-gray-600 hover:bg-sky-200 px-3 py-1 bg-gray-50 rounded-full shadow-sm transition-all duration-300">Edit this post</a>
+        @endauth
+
+        <div class="bg-white rounded-md p-5 w-full">
             <h3
-                class="text-5xl text-center py-3 text-gray-600 border-b border-gray-100 mb-2 font-pacifico"
+                class="text-5xl text-center py-4 text-gray-600 border-b border-gray-100 font-pacifico"
             >
                 {{ $post->title }}
             </h3>
-            <div class="blog-post text-justify text-gray-600">
+            <div class="blog-post text-justify text-gray-600 py-3 px-2">
                 {!! $post->content !!}
             </div>
 
             <div
-                class="flex justify-between items-center border-t border-gray-100 mt-3 pt-2 text-lg"
+                class="flex justify-between items-center border-t border-gray-100 py-4 text-lg"
             >
                 <div>{{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</div>
             </div>

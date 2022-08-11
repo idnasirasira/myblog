@@ -21,8 +21,9 @@
                     @auth
                         <a class="text-sky-600 text-lg hover:text-gray-600" href="{{route('post.create')}}">Create a new post</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sky-600 text-lg hover:text-gray-600">Log in</a>
                     @endauth
+                    {{-- <a href="#" onclick="toggleFont(this)" class="text-sky-600 text-lg hover:text-gray-600">I hate the font...</a> --}}
                 </div>
             @endif
         <div
@@ -31,6 +32,7 @@
         ></div>
         <main class="flex items-center justify-center">
           <div class="md:w-6/12 sm:w-8/12 w-full h-scree py-5 px-3 flex flex-col">
+
             {{ $slot }}
           </div>
         </main>
@@ -135,6 +137,13 @@
                 x.style.visibility = "hidden";
             }, 200);
 
+        </script>
+
+        <script>
+            function toggleFont(e){
+                document.body.classList.remove('font-reenie');
+                e.remove();
+            }
         </script>
 
         @stack('scripts')
