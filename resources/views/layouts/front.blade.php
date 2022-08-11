@@ -166,46 +166,8 @@
         </script>
 
         <script>
-            /*
-            NoPrint.js V1.0
-            Created by PDFAntiCopy.com
-            */
-            var noPrint=true;
-            var noCopy=false;
             var noScreenshot=true;
             var autoBlur=true;
-
-            if (noCopy)
-            {
-                document.body.oncopy = function(){return false};
-                document.body.oncontextmenu = function(){return false};
-                document.body.onselectstart = document.body.ondrag = function(){
-                    return false;
-                }
-                document.onkeydown = function() {
-                    if(event.ctrlKey == true && event.keyCode == 83) {
-                        event.preventDefault();
-                    }
-                }
-            }
-
-            if (noPrint)
-            {
-            var c=document.createElement("span");
-            c.style.display="none";
-            c.style.postion="absolute";
-            c.style.background="#000";
-                var first=document.body.firstChild;
-                var wraphtml=document.body.insertBefore(c,first);
-            c.setAttribute('width', document.body.scrollWidth);
-            c.setAttribute('height', document.body.scrollHeight);
-                c.style.display="block";
-                var cssNode3 = document.createElement('style');
-                cssNode3.type = 'text/css';
-                cssNode3.media = 'print';
-                cssNode3.innerHTML ='body{display:none}';
-                    document.head.appendChild(cssNode3);
-            }
 
             var cssNode2 = document.createElement('style');
             cssNode2.type = 'text/css';
