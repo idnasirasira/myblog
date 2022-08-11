@@ -1,6 +1,6 @@
 <x-front-layout>
     <div class="header text-center text-gray-700 border-b border-gray-100 border-dotted">
-        <h1 class="text-6xl font-bold">Idnasirasira Blog's</h1>
+        <h1 class="text-6xl font-bold tracking-widest">Idnasirasira</h1>
         <small class="font-semibold"
         >Do what you wanna do, and say what you wanna say.</small
         >
