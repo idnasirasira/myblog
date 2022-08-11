@@ -165,63 +165,6 @@
             }
         </script>
 
-        <script>
-            var noScreenshot=true;
-            var autoBlur=true;
-
-            var cssNode2 = document.createElement('style');
-            cssNode2.type = 'text/css';
-            cssNode2.media = 'screen';
-            cssNode2.innerHTML ='div{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}';
-            document.head.appendChild(cssNode2);
-            document.body.style.cssText="-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;";
-
-
-            function toBlur()
-            {
-                if (autoBlur)
-                document.body.style.cssText="-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);-o-filter: blur(5px);filter: blur(5px);"
-            }
-
-            function toClear()
-            {
-                document.body.style.cssText="-webkit-filter: blur(0px);-moz-filter: blur(0px);-ms-filter: blur(0px);-o-filter: blur(0px);filter: blur(0px);"
-            }
-
-            document.onclick = function(event){
-                toClear();
-            }
-
-            document.onmouseleave = function(event){
-                toBlur();
-            }
-
-            document.onblur = function(event){
-                toBlur();
-            }
-
-            document.addEventListener('keyup', (e) => {
-                if (e.key == 'PrintScreen') {
-                    if (noScreenshot)
-                    {
-                    navigator.clipboard.writeText('');
-
-                }
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.ctrlKey && e.key == 'p') {
-                    if (noPrint)
-                        {
-                        e.cancelBubble = true;
-                        e.preventDefault();
-                        e.stopImmediatePropagation();
-                    }
-                }
-            });
-        </script>
-
         @stack('scripts')
     </body>
 </html>
