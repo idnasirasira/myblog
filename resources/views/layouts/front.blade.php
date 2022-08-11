@@ -163,10 +163,6 @@
                 document.querySelector('#copyInformationBlock').classList.remove('flex');
                 return false;
             }
-
-            var noPrint=true;
-            var noScreenshot=true;
-            var autoBlur=true;
         </script>
 
         <script>
@@ -174,6 +170,11 @@
             NoPrint.js V1.0
             Created by PDFAntiCopy.com
             */
+            var noPrint=true;
+            var noCopy=false;
+            var noScreenshot=true;
+            var autoBlur=true;
+
             if (noCopy)
             {
                 document.body.oncopy = function(){return false};
