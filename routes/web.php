@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('/post/detail/{post}', [FrontController::class, 'detail'])->name('post.detail');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -25,4 +26,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/post/create', [FrontController::class, 'create'])->name('post.create');
+    Route::post('/post/create', [FrontController::class, 'store'])->name('post.store');
 });

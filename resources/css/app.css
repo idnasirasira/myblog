@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Reenie+Beanie&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#scene {
+    transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+.blog-post li {
+    @apply hover:list-disc text-gray-600;
+}
+
+.btn {
+    @apply bg-sky-200 shadow-md rounded-sm px-3 py-1 font-semibold hover:bg-white hover:text-sky-600 transition-all duration-500;
+}
+
+.form-control {
+    @apply flex flex-col mb-2;
+}
+
+.form-control > input,
+textarea {
+    @apply border border-sky-200 px-3 py-2 rounded-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none;
+}
+
+.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 400px;
+}
