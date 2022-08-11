@@ -20,7 +20,7 @@
             <div
                 class="flex justify-between items-center border-t border-gray-100 py-4 text-lg"
             >
-                <div>{{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</div>
+                <div>{{\Carbon\Carbon::parse($post->created_at)->format('D,d F Y')}}, {{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}} on <span class="text-sky-600 cursor-pointer">Random</span></div>
             </div>
         </div>
 

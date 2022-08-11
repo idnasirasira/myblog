@@ -20,7 +20,7 @@
                     {{-- {!! Str::limit(str_replace(array("\r", "\n"), '', $post->content), 150, '...') !!} --}}
                 {{-- </p> --}}
                 <div class="flex justify-between items-center border-gray-100 mt-3 pt-2 text-lg">
-                    <div>{{\Carbon\Carbon::parse($post->created_at)->format('D, F Y')}}, {{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}} on <span class="text-sky-600 cursor-pointer">Random</span></div>
+                    <div>{{\Carbon\Carbon::parse($post->created_at)->format('D,d F Y')}}, {{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}} on <span class="text-sky-600 cursor-pointer">Random</span></div>
                     <a href="{{route('post.detail', ['post' => $post->id])}}" class="hover:text-sky-400 transition-colors duration-300" >Read -></a>
                 </div>
             </div>
