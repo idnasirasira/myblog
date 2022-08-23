@@ -68,7 +68,7 @@ class FrontController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
         //
     }
@@ -79,9 +79,9 @@ class FrontController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('front.post.edit', ['post' => $post]);
     }
 
     /**
@@ -91,9 +91,13 @@ class FrontController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->update();
+
+        return redirect()->route('home');
     }
 
     /**

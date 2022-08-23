@@ -4,7 +4,7 @@
         <a href="{{route('home')}}" class="text-sm text-gray-600"> <- Home</a>
 
         @auth
-            <a href="{{ route('post.detail', ['post' => $post->id]) }}" class="text-sky-600 text-sm hover:text-gray-600 hover:bg-sky-200 px-3 py-1 bg-gray-50 rounded-full shadow-sm transition-all duration-300">Edit this post</a>
+            <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="text-sky-600 text-sm hover:text-gray-600 hover:bg-sky-200 px-3 py-1 bg-gray-50 rounded-full shadow-sm transition-all duration-300">Edit this post</a>
         @endauth
 
         <div class="bg-white rounded-md p-5 w-full">

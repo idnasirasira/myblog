@@ -29,4 +29,6 @@ Route::middleware([
 
     Route::get('/post/create', [FrontController::class, 'create'])->name('post.create');
     Route::post('/post/create', [FrontController::class, 'store'])->name('post.store');
+    Route::get('/post/edit/{post}', [FrontController::class, 'edit'])->name('post.edit');
+    Route::post('/post/update/{post}', [FrontController::class, 'update'])->name('post.update');
 });
